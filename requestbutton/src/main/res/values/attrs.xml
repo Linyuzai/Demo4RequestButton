@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RequestIcon">
+        <attr name="icon_color" format="reference|color" />
+        <attr name="icon_size" format="dimension" />
+        <attr name="icon_style" format="enum">
+            <enum name="tick_start_circle" value="0" />
+            <enum name="tick_half_circle" value="1" />
+            <enum name="tick_end_circle" value="2" />
+        </attr>
+        <attr name="speed_multiplier" format="float" />
+    </declare-styleable>
+    <declare-styleable name="RequestButton">
+        <attr name="request_icon_spacing" format="dimension" />
+        <attr name="request_icon_color" format="color" />
+        <attr name="request_icon_size" format="dimension" />
+        <attr name="request_icon_style" format="enum">
+            <enum name="tick_start_circle" value="0" />
+            <enum name="tick_half_circle" value="1" />
+            <enum name="tick_end_circle" value="2" />
+        </attr>
+        <attr name="request_speed_multiplier" format="float" />
+        <attr name="text_default" format="string" />
+        <attr name="text_progress" format="string" />
+        <attr name="text_success" format="string" />
+        <attr name="text_failure" format="string" />
+        <attr name="text_color" format="color" />
+        <attr name="text_size" format="dimension" />
+        <attr name="text_width" format="dimension" />
+    </declare-styleable>
+</resources>

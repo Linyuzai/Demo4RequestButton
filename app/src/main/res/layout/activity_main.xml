@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:icon="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp"
+    tools:context="com.linyuzai.demo4requestbutton.MainActivity">
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/start0"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_start_circle"
+        icon:request_speed_multiplier="1.0"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/half0"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_half_circle"
+        icon:request_speed_multiplier="1.1"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/end0"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_end_circle"
+        icon:request_speed_multiplier="1.2"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/start1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_start_circle"
+        icon:request_speed_multiplier="1.3"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/half1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_half_circle"
+        icon:request_speed_multiplier="1.4"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/end1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_end_circle"
+        icon:request_speed_multiplier="1.5"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/start2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_start_circle"
+        icon:request_speed_multiplier="1.6"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/half2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_half_circle"
+        icon:request_speed_multiplier="1.7"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <com.linyuzai.requestbutton.RequestButton
+        android:id="@+id/end2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/bg"
+        icon:request_icon_size="2dp"
+        icon:request_icon_spacing="25dp"
+        icon:request_icon_style="tick_end_circle"
+        icon:request_speed_multiplier="1.8"
+        icon:text_color="@android:color/white"
+        icon:text_default="default"
+        icon:text_failure="failure"
+        icon:text_progress="progress"
+        icon:text_success="success" />
+
+    <Button
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="start" />
+
+</LinearLayout>
