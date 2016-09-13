@@ -4,6 +4,19 @@ follow pay button of alipay
 ![request_button.gif](http://upload-images.jianshu.io/upload_images/2113387-2118d439d2c97bea.gif?imageMogr2/auto-orient/strip)
 
 ```
+<dependency>
+  <groupId>com.linyuzai</groupId>
+  <artifactId>requestbutton</artifactId>
+  <version>1.0</version>
+  <type>pom</type>
+</dependency>
+
+or
+
+compile 'com.linyuzai:requestbutton:1.0'
+```
+
+```
 <com.linyuzai.requestbutton.RequestButton    
   android:id="@+id/end2"
   android:layout_width="match_parent"
