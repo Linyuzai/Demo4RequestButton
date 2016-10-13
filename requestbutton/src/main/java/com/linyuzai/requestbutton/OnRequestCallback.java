@@ -6,6 +6,7 @@ package com.linyuzai.requestbutton;
  * callback when you can request or remind request over
  */
 public interface OnRequestCallback {
+    boolean beforeRequest();
     /**
      * do your request
      * <p/>
@@ -18,5 +19,5 @@ public interface OnRequestCallback {
      * <p/>
      * 请求结束（打完√）
      */
-    void onFinish();
+    void onFinish(boolean isSuccess);
 }

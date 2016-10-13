@@ -32,12 +32,17 @@ public class MainActivity extends AppCompatActivity {
 
         end2.setOnRequestCallback(new OnRequestCallback() {
             @Override
+            public boolean beforeRequest() {
+                return true;
+            }
+
+            @Override
             public void onRequest() {
                 Toast.makeText(MainActivity.this, "request", Toast.LENGTH_SHORT).show();
             }
 
             @Override
-            public void onFinish() {
+            public void onFinish(boolean isSuccess) {
                 Toast.makeText(MainActivity.this, "finish", Toast.LENGTH_SHORT).show();
             }
         });

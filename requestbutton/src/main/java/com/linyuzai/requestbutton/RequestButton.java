@@ -148,7 +148,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
             failureText = a.getString(R.styleable.RequestButton_text_failure);
             textColor = a.getColor(R.styleable.RequestButton_text_color, Color.BLACK);
             textSize = a.getDimensionPixelSize(R.styleable.RequestButton_text_size, 20);
-            textWidth = a.getDimensionPixelSize(R.styleable.RequestButton_text_width, ViewGroup.LayoutParams.WRAP_CONTENT);
+            textWidth = a.getDimensionPixelSize(R.styleable.RequestButton_text_width, -1);
 
             a.recycle();
         }
@@ -158,7 +158,8 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
         linearLayout.setGravity(Gravity.RIGHT);
 
         buttonText = new TextView(context);
-        buttonText.setLayoutParams(new LayoutParams(textWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+        buttonText.setLayoutParams(new LayoutParams(textWidth == -1 ? ViewGroup.LayoutParams.WRAP_CONTENT : textWidth,
+                ViewGroup.LayoutParams.WRAP_CONTENT));
         buttonText.setGravity(Gravity.CENTER);
 
         View view = new View(context);
@@ -184,6 +185,8 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
+        if (callback != null && !callback.beforeRequest())
+            return;
         startRequest();
     }
 
@@ -195,7 +198,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
         } else {
             buttonText.setText(failureText);
             if (callback != null)
-                callback.onFinish();
+                callback.onFinish(false);
             return false;
         }
     }
@@ -203,7 +206,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
     @Override
     public void onTickFinished(RequestIcon icon) {
         if (callback != null)
-            callback.onFinish();
+            callback.onFinish(true);
     }
 
     public void startRequest() {
