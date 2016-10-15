@@ -7,13 +7,13 @@ follow pay button of alipay
 <dependency>
   <groupId>com.linyuzai</groupId>
   <artifactId>requestbutton</artifactId>
-  <version>1.0</version>
+  <version>1.1.0</version>
   <type>pom</type>
 </dependency>
 
 or
 
-compile 'com.linyuzai:requestbutton:1.0'
+compile 'com.linyuzai:requestbutton:1.1.0'
 ```
 
 ```
@@ -90,17 +90,21 @@ text_width，文本宽度，默认wrap_content
 
 ```
 end2.setOnRequestCallback(new OnRequestCallback() {    
+    @Override
+    public boolean beforeRequest() {
+        return true;
+    }
     @Override    
     public void onRequest() {        
         Toast.makeText(MainActivity.this, "request", Toast.LENGTH_SHORT).show();    
     }    
     @Override    
-    public void onFinish() {
+    public void onFinish(boolean isSuccess) {
         Toast.makeText(MainActivity.this, "finish", Toast.LENGTH_SHORT).show();    
     }
 });
 ```
->不需要自己设置OnClickListener，在onRequest()里进行请求，成功或失败后手动调用requestSuccess()或者requestFailure()，等到icon画完就会回调到onFinish()
+>不需要自己设置OnClickListener，beforeRequest()返回true开始请求，返回false不进行请求。在onRequest()里进行请求，成功或失败后手动调用requestSuccess()或者requestFailure()，等到icon画完就会回调到onFinish()
 
 ```
 end2.requestSuccess();
