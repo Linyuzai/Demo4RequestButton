@@ -20,151 +20,151 @@ public class RequestIcon extends View {
 
     /**
      * max speed multiplier
-     * <p/>
+     * <p>
      * 最大速度乘数
      */
     public static final float MAX_MULTIPLIER = 2.0f;
     /**
      * min speed multiplier
-     * <p/>
+     * <p>
      * 最小速度乘数
      */
     public static final float MIN_MULTIPLIER = 0.5f;
     /**
      * max circle progress
-     * <p/>
+     * <p>
      * 最大圆圈进度/百分比
      */
     public static final float CIRCLE_PROGRESS_MAX = 100f;
     /**
      * first line progress
-     * <p/>
+     * <p>
      * 第一条线所占最大进度/百分比
      */
     public static final float FIRST_LINE_PROGRESS = 33.3f;
     /**
      * second line progress
-     * <p/>
+     * <p>
      * 第二条线所占最大进度/百分比
      */
     public static final float SECOND_LINE_PROGRESS = 66.6f;
     /**
      * icon change listener
-     * <p/>
+     * <p>
      * 图标变化监听器
      */
     private OnIconChangedListener listener;
     /**
      * icon color,white default
-     * <p/>
+     * <p>
      * 图标颜色，默认白色
      */
     private int iconColor = Color.WHITE;
     /**
      * icon size,the paint width,5px default
-     * <p/>
+     * <p>
      * 图标尺寸，及画笔宽度，默认5px
      */
     private int iconSize = 5;
     /**
      * icon style,the style of when do tick,tick when circle start default
-     * <p/>
+     * <p>
      * 图标样式，什么时候打钩，默认开始画圆就开始打钩
      */
     private Style iconStyle = Style.TICK_START_CIRCLE;
     /**
      * the x index of the center of the circle
-     * <p/>
+     * <p>
      * 圆心的x坐标
      */
     private int centerX;
     /**
      * the y index of the center of the circle
-     * <p/>
+     * <p>
      * 圆心的y坐标
      */
     private int centerY;
     /**
      * the radius of the circle
-     * <p/>
+     * <p>
      * 圆的半径
      */
     private int radius;
     /**
      * the first line of tick
-     * <p/>
+     * <p>
      * 打钩的第一条线
      */
     private Line firstLine;
     /**
      * the second line of tick
-     * <p/>
+     * <p>
      * 打钩的第二条线
      */
     private Line secondLine;
     /**
      * the x of line
-     * <p/>
+     * <p>
      * 线段的x坐标
      */
     private float lineX;
     /**
      * the progress of line
-     * <p/>
+     * <p>
      * 线段的进度/百分比
      */
     private float lineProgress;
     /**
      * the increase of progress
-     * <p/>
+     * <p>
      * 线段进度/百分比的增量
      */
     private float lineProgressIncrease;
     /**
      * the progress of circle
-     * <p/>
+     * <p>
      * 圆的进度/百分比
      */
     private float progress;
     /**
      * the first progress
-     * <p/>
+     * <p>
      * 第一个圆弧的进度/百分比
      */
     private float firstProgress;
     /**
      * the second progress
-     * <p/>
+     * <p>
      * 第二个圆弧的进度/百分比
      */
     private float secondProgress;
     /**
      * the progress of half circle
-     * <p/>
+     * <p>
      * 经过半个圆的进度/百分比
      */
     private float halfPathProgress = -1f;
     /**
      * the speed multiplier,1.8 default
-     * <p/>
+     * <p>
      * 速度的乘数，默认1.8倍
      */
     private float speedMultiplier = 1.8f;
     /**
      * the interval of progress
-     * <p/>
+     * <p>
      * 每一圈之间的间隔时间
      */
     private int interval;
     /**
      * if circle and tick
-     * <p/>
+     * <p>
      * 是否画圈和打钩
      */
     private boolean progressToCircle;
     /**
      * the state of icon,idle default
-     * <p/>
+     * <p>
      * 图标状态，默认空闲状态
      */
     private State state = State.IDLE;
@@ -447,7 +447,7 @@ public class RequestIcon extends View {
 
     /**
      * start circle when progress finish a round
-     * <p/>
+     * <p>
      * 进度画完一圈后开始画圈，不是一调用就开始画
      */
     public void startCircle() {
@@ -456,7 +456,7 @@ public class RequestIcon extends View {
 
     /**
      * line
-     * <p/>
+     * <p>
      * 线
      */
     class Line {
@@ -481,7 +481,7 @@ public class RequestIcon extends View {
 
     /**
      * point
-     * <p/>
+     * <p>
      * 点
      */
     class Point {

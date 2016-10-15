@@ -20,85 +20,85 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
     public static final String TAG = RequestButton.class.getSimpleName();
     /**
      * the callback of request
-     * <p/>
+     * <p>
      * 请求回调
      */
     private OnRequestCallback callback;
     /**
      * the spacing between icon and text
-     * <p/>
+     * <p>
      * 图标和文字的间隔
      */
     private int iconSpacing = 0;
     /**
      * icon color,white default
-     * <p/>
+     * <p>
      * 图标颜色，默认白色
      */
     private int iconColor = Color.WHITE;
     /**
      * icon size,the paint width,5px default
-     * <p/>
+     * <p>
      * 图标尺寸，及画笔宽度，默认5px
      */
     private int iconSize = 5;
     /**
      * icon style,the style of when do tick,tick when circle start default
-     * <p/>
+     * <p>
      * 图标样式，什么时候打钩，默认开始画圆就开始打钩
      */
     private Style iconStyle = Style.TICK_END_CIRCLE;
     /**
      * the speed multiplier,1.8 default
-     * <p/>
+     * <p>
      * 速度的乘数，默认1.8倍
      */
     private float speedMultiplier = 1.8f;
     /**
      * the default text of the button
-     * <p/>
+     * <p>
      * 按钮的默认文字
      */
     private String defaultText = "default";
     /**
      * the text of button when request
-     * <p/>
+     * <p>
      * 请求时按钮的文字
      */
     private String progressText = "progress";
     /**
      * the text of button when success
-     * <p/>
+     * <p>
      * 请求成功时按钮的文字
      */
     private String successText = "success";
     /**
      * the text of button when failure
-     * <p/>
+     * <p>
      * 请求失败时按钮的文字
      */
     private String failureText = "failure";
     /**
      * the text color of button
-     * <p/>
+     * <p>
      * 按钮字体颜色
      */
     private int textColor = Color.BLACK;
     /**
      * the text size of button
-     * <p/>
+     * <p>
      * 按钮字体大小
      */
     private float textSize = 20f;
     /**
      * the width of text,wrap content default
-     * <p/>
+     * <p>
      * 文本宽度，默认包含内容
      */
     private int textWidth = ViewGroup.LayoutParams.WRAP_CONTENT;
     /**
      * if request is success
-     * <p/>
+     * <p>
      * 请求是否成功
      */
     private boolean isSuccess;
@@ -228,7 +228,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
 
     /**
      * call this by hand when request success
-     * <p/>
+     * <p>
      * 请求成功是手动调用这个方法
      */
     public void requestSuccess() {
@@ -238,7 +238,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
 
     /**
      * call this by hand when request failure
-     * <p/>
+     * <p>
      * 请求失败是手动调用这个方法
      */
     public void requestFailure() {
