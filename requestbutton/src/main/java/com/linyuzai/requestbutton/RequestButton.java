@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,11 +129,9 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
     }
 
     private void init(Context context, AttributeSet attrs) {
-
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
         setOnClickListener(this);
-
         if (attrs != null) {
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.RequestButton);
             iconSpacing = a.getDimensionPixelSize(R.styleable.RequestButton_request_icon_spacing, 0);
@@ -180,7 +179,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
 
         buttonText.setText(defaultText);
         buttonText.setTextColor(textColor);
-        buttonText.setTextSize(textSize);
+        buttonText.setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize);
     }
 
     @Override

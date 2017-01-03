@@ -22,6 +22,7 @@
         icon:text_default="default"
         icon:text_failure="failure"
         icon:text_progress="progress"
+        icon:text_size="16sp"
         icon:text_success="success" />
 
     <com.linyuzai.requestbutton.RequestButton
