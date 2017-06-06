@@ -26,4 +26,16 @@ public interface OnRequestCallback {
      * 请求结束（打完√）
      */
     void onFinish(boolean isSuccess);
+
+    interface BeforeRequest {
+        boolean beforeRequest();
+    }
+
+    interface OnRequest {
+        void onRequest();
+    }
+
+    interface OnFinish {
+        void onFinish(boolean isSuccess);
+    }
 }

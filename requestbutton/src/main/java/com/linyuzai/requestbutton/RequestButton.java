@@ -1,5 +1,6 @@
 package com.linyuzai.requestbutton;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -25,6 +26,37 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
      * 请求回调
      */
     private OnRequestCallback callback;
+
+    private OnRequestCallback.BeforeRequest beforeRequestCallback;
+
+    public void setBeforeRequestCallback(OnRequestCallback.BeforeRequest beforeRequestCallback) {
+        this.beforeRequestCallback = beforeRequestCallback;
+    }
+
+    public OnRequestCallback.BeforeRequest getBeforeRequestCallback() {
+        return beforeRequestCallback;
+    }
+
+    private OnRequestCallback.OnRequest requestCallback;
+
+    public void setRequestCallback(OnRequestCallback.OnRequest requestCallback) {
+        this.requestCallback = requestCallback;
+    }
+
+    public OnRequestCallback.OnRequest getRequestCallback() {
+        return requestCallback;
+    }
+
+    private OnRequestCallback.OnFinish finishCallback;
+
+    public void setFinishCallback(OnRequestCallback.OnFinish finishCallback) {
+        this.finishCallback = finishCallback;
+    }
+
+    public OnRequestCallback.OnFinish getFinishCallback() {
+        return finishCallback;
+    }
+
     /**
      * the spacing between icon and text
      * <p>
@@ -128,6 +160,7 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
         init(context, attrs);
     }
 
+    @SuppressLint("RtlHardcoded")
     private void init(Context context, AttributeSet attrs) {
         setOrientation(HORIZONTAL);
         setGravity(Gravity.CENTER_VERTICAL);
@@ -184,8 +217,13 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
 
     @Override
     public void onClick(View v) {
-        if (callback != null && !callback.beforeRequest())
-            return;
+        if (beforeRequestCallback != null) {
+            if (!beforeRequestCallback.beforeRequest())
+                return;
+        } else {
+            if (callback != null && !callback.beforeRequest())
+                return;
+        }
         startRequest();
     }
 
@@ -196,24 +234,36 @@ public class RequestButton extends LinearLayout implements View.OnClickListener,
             return true;
         } else {
             buttonText.setText(failureText);
-            if (callback != null)
-                callback.onFinish(false);
+            if (finishCallback != null)
+                finishCallback.onFinish(false);
+            else {
+                if (callback != null)
+                    callback.onFinish(false);
+            }
             return false;
         }
     }
 
     @Override
     public void onTickFinished(RequestIcon icon) {
-        if (callback != null)
-            callback.onFinish(true);
+        if (finishCallback != null)
+            finishCallback.onFinish(true);
+        else {
+            if (callback != null)
+                callback.onFinish(true);
+        }
     }
 
     public void startRequest() {
         if (icon.getState() == State.IDLE) {
             buttonText.setText(progressText);
             icon.startProgress();
-            if (callback != null)
-                callback.onRequest();
+            if (requestCallback != null)
+                requestCallback.onRequest();
+            else {
+                if (callback != null)
+                    callback.onRequest();
+            }
         }
     }
 
